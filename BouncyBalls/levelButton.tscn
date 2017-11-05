@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://levelButton.gd" type="Script" id=1]
+[ext_resource path="res://pulse.tscn" type="PackedScene" id=2]
+[ext_resource path="res://balls/blue.png" type="Texture" id=3]
+
+[node name="levelButton" type="Node2D"]
+
+transform/scale = Vector2( 2, 2 )
+script/script = ExtResource( 1 )
+colour = null
+
+[node name="pulse" parent="." instance=ExtResource( 2 )]
+
+[node name="button" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -23.5
+margin/top = -23.5
+margin/right = 23.5
+margin/bottom = 23.5
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 3 )
+params/resize_mode = 0
+params/stretch_mode = 0
+
+[node name="tween" type="Tween" parent="."]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+
